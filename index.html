@@ -83,19 +83,11 @@
 				<ul class="fragment">
 					<li>Uber</li>
 					<li>FedEx</li>
-					<li>Google Maps</li>
+					<li>Delta</li>
 				</ul>
 			</section>
 
-			<section>
-				<section data-markdown>
-					### Routing by the numbers
-
-					* Big
-					* Scary
-					* Numbers
-				</section>
-				<section data-markdown>
+			<section data-markdown>
 					### Routing by the numbers
 
 					**11.7 billion tons of freight**
@@ -110,7 +102,6 @@
 
 					Value of parcel goods moved in US, 2012
 				</section>
-			</section>
 
 			<section>
 				<h3>Traveling Salesman problem</h3>
@@ -155,36 +146,28 @@
 						<li>A set of customers with a finite demand</li>
 						<li>A list of distances between each customer</li>
 					</ul>
-					<p>Find the shortest route that satisfies customer demand</p>
+					<p>Find the shortest set of routes that satisfy<br>customer demand</p>
 				</section>
 
-				<section>
+
 					<section>
 						<h3>The Rich Vehicle Routing Problem (RVRP)</h3>
 						<p>The RVRP solves more complex routing problems:</p>
 						<ul>
 							<li>Routing things that have to arrive at specfic times</li>
-							<li>Planning routes where you don't know demand ahead of time</li>
+							<li>Planning routes where you don't know demand<br>ahead of time</li>
 							<li>How to choose routes in a competitive environment</li>
 						</ul>
 					</section>
 					<section>
-						<h3>Vehicle Routing Problem with Time Windows (VRPTW)</h3>
-						<p>Because you don't want UPS showing up at 2:30am</p>
-						<ul>
-							<li>Has both time and distance as factors</li>
-							<li>Handles time as both windows and points</li>
-						</ul>
-					</section>
-					<section>
 						<h3>Decentralized Vehicle Routing Problem</h3>
-						<p>Asks "How do you route things if every truck plans its own route?"</p>
+						<p>"How do you route things if every truck<br>plans its own route?"</p>
 						<ul>
 							<li>Less useful in real life currently</li>
 							<li>More popular as self-driving cars become relevant</li>
 						</ul>
 					</section>
-				</section>
+
 
 				<section>
 					<h3>Agents</h3>
@@ -192,8 +175,11 @@
 					<ul>
 						<li>Emulating an individual of a population</li>
 						<li>Limited access to global state</li>
-						<li>Decision making authority is given to individuals.</li>
+						<li>Decision making authority is given to individuals</li>
 					</ul>
+					<aside class="notes">
+						"Discuss state"
+					</aside>
 				</section>
 
 				<section>
@@ -223,7 +209,7 @@
 							<li>$s$ identifies a strategy in the set</li>
 							<div class="fragment">
 								<li>$p$ is a function that gives the probability of a strategy</li>
-								<li>$p(X^{[s]})$ is the probability that a strategy $s$ in set $X$ is the best option</li>
+								<li>$p(X_{s})$ is the probability that a strategy $s$ in set $X$ is the best option</li>
 							</div>
 							<li class="fragment">The probabilities default to a uniform level</li>
 						</ul>
@@ -234,7 +220,7 @@
 						<ol type="1">
 							<li>Form a combined strategy set $Y$</li>
 							<li>Calculate the expected local utility</li>
-							<p>Local utility of Agent $i^r =p^i\prod_{(i)}{p(X^{[?]})\cdot G(Y_i^{[s]})}$</p>
+							<p>Local utility of Agent $i^r =p^i\prod_{(i)}{p(X_{?})\cdot G(Y_i)}$</p>
 							<br>
 							<p class="fragment">"The product of all sample probabilities <br> times the estimated global utility"</p>
 						</ol>
@@ -274,6 +260,7 @@
 							<li class="fragment">Unimpressive results</li>
 							<li class="fragment">Has potential for improvement</li>
 						</ul>
+					</section>
 					</section>
 
 					<section>
@@ -327,6 +314,13 @@
 							<li>Distributed approaches aren't as good as centralized ones</li>
 						</ul>
 					</section>
+
+					<section>
+						<h3>Questions?</h3>
+						<ul>
+						</ul>
+					</section>
+
 					<section id="themes">
 						<h2>Themes</h2>
 						<p>
