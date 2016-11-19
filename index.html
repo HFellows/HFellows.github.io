@@ -167,7 +167,7 @@
 
 			<section>
 				<h3>Agents</h3>
-				<p>Agents are a loosely defined term. The common features of agents are:</p>
+				<p>Agents are a loosely defined term.<br>The common features of agents are:</p>
 				<ul>
 					<li>Emulating an individual of a population</li>
 					<li>Limited access to global state</li>
@@ -217,12 +217,13 @@
 					<ul>
 						<li>$N$ agents, each with a set $X$ of strategies</li>
 						<li>This set is only a sampling of possible strategies</li>
-						<li class="fragment">All strategies have an associated probability</li>
-						<ul class="fragment">
-							<li>Probability of being chosen as answer</li>
-							<li>Defaults to $\frac{1}{m}$, where $m$ is the length of the set</li>
-						</ul>
-
+						<div class="fragment">
+							<li>All strategies have an associated probability</li>
+							<ul>
+								<li>Probability of being chosen as answer</li>
+								<li>Defaults to $\frac{1}{m}$, where $m$ is the length of the set</li>
+							</ul>
+						</div>
 					</ul>
 				</section>
 				<section>
@@ -230,7 +231,7 @@
 					<img src="img/prob_dist.png" alt="Bar graph of probabilities in a PC strategy set" style="width:500px;"/>
 					<ul>
 						<li>Our objective is to get a probabilty near $1.0$</li>
-						<li class="fragment">PC iteratively updates probabilties</li>
+						<li>PC iteratively updates probabilties</li>
 					</ul>
 				</section>
 				<section>
@@ -308,6 +309,7 @@
 				<section>
 					<h3>Reverse Vickrey Auction</h3>
 					<ul>
+						<li>Reverse - sellers compete to offer lowest bid</li>
 						<li>Sealed bid</li>
 						<li>Lowest bid wins, but is paid second lowest bid</li>
 						<li>Encourages bidders to provide accurate cost estimate</li>
