@@ -51,6 +51,20 @@
 				Computer Science Senior Seminar
 			</section>
 
+			<section data-markdown>
+				###Outline
+
+				1. The what and why of routing
+
+				2. The rich vehicle routing problem
+
+				3. Probability collectives
+
+				4. Distributed reverse Vickrey auction
+
+				5. Conclusion
+			</section>
+
 			<section>
 				<h3>
 					What is routing?
@@ -62,7 +76,7 @@
 
 			<section>
 				<h3>The routing of everyday life.</h3>
-				<ul class="fragment">
+				<ul>
 					<li>Uber</li>
 					<li>FedEx</li>
 					<li>Delta</li>
@@ -86,15 +100,6 @@
 			</section>
 
 			<section>
-				<h3>Traveling Salesman problem</h3>
-				<p>The problem asks for the shortest route<br>which passes through each point once</p>
-				<img src="https://imgs.xkcd.com/comics/travelling_salesman_problem.png" alt="Xkcd's travelling saleman strip" />
-				<aside class="notes">
-					"In general - the case where all points are connected to every other point -"
-				</aside>
-			</section>
-
-			<section>
 				<h3>Travelling Salesman problem</h3>
 				<p>The problem asks for the shortest route which passes through each point once</p>
 				<ul>
@@ -109,32 +114,26 @@
 			</section>
 
 			<section>
+				<h3>Traveling Salesman problem</h3>
+				<p>The problem asks for the shortest route<br>which passes through each point once</p>
+				<img src="/img/xkcd_399.png" alt="Xkcd's travelling saleman strip" />
+				<aside class="notes">
+					"In general - the case where all points are connected to every other point -"
+				</aside>
+			</section>
+
+			<section>
 				<h3>Routing is an NP-hard problem</h3>
 				<blockquote cite="Wikipedia">
-					&ldquo;- at least as hard as the hardest problems in NP&rdquo;
+					&ldquo;- at least as hard as the<br>hardest problems in NP&rdquo;
 				</blockquote>
 				<ul>
-					<li class="fragment">Hard / expensive to find exact solutions quickly</li>
-					<li class="fragment">Probably no easy methods of solving them</li>
-					<li class="fragment">Good solutions to these problems have real value</li>
+					<li>Hard / expensive to find exact solutions quickly</li>
+					<li>Probably no easy methods of solving them</li>
+					<li>Good solutions to these problems have real value</li>
 				</ul>
 			</section>
 
-			<section data-markdown>
-				### Routing by the numbers
-
-				**11.7 billion tons of freight**
-
-				moved in the US, 2012
-
-				**1-2% of EU GDP**
-
-				External costs of traffic jams in EU, 2011
-
-				**1.5 trillion dollars**
-
-				Value of parcel goods moved in US, 2012
-			</section>
 			<section>
 				<h3>The Vehicle Routing Problem (VRP)</h3>
 				<p>Given:</p>
@@ -156,6 +155,7 @@
 					<li>How to choose routes in a competitive environment</li>
 				</ul>
 			</section>
+
 			<section>
 				<h3>Decentralized Vehicle Routing Problem</h3>
 				<p>"How do you route things if every truck<br>plans its own route?"</p>
@@ -164,7 +164,6 @@
 					<li>More popular as self-driving cars become relevant</li>
 				</ul>
 			</section>
-
 
 			<section>
 				<h3>Agents</h3>
@@ -181,14 +180,26 @@
 
 			<section>
 				<h3>Utility</h3>
-				<img src="img/utility.svg" alt="Chart that demonstrates utility" style="width:500px;"/>
-				<ul class="fragment">
+				<img src="img/utility.png" alt="Chart that demonstrates utility" style="width:500px;"/>
+				<ul>
 					<li>Local utility: how good the state is for the indivdual</li>
 					<li>Gobal utility: how good the state is for everyone</li>
 				</ul>
 			</section>
 
+			<section data-markdown>
+				###Outline
 
+				1. The what and why of routing
+
+				2. The rich vehicle routing problem
+
+				3. **Probability collectives**
+
+				4. Distributed reverse Vickrey auction
+
+				5. Conclusion
+			</section>
 
 			<section>
 				<h3>Probability Collectives (PC)</h3>
@@ -216,11 +227,9 @@
 				</section>
 				<section>
 					<h3>Probabilities</h3>
+					<img src="img/prob_dist.png" alt="Bar graph of probabilities in a PC strategy set" style="width:500px;"/>
 					<ul>
 						<li>Our objective is to get a probabilty near $1.0$</li>
-						<ul class="fragment">
-							<li>Usually not possible</li>
-						</ul>
 						<li class="fragment">PC iteratively updates probabilties</li>
 					</ul>
 				</section>
@@ -228,7 +237,7 @@
 					<h3>Shannon Entropy</h3>
 					<ul>
 						<li>Entropy is an estimate of information content</li>
-						<li>As the entropy of our sets increase, we know more about the usefulness of the strategies within.</li>
+						<li>As the entropy of probabilities of our sets increase, <br>we know more about the usefulness of the strategies within.</li>
 					</ul>
 				</section>
 				<section>
@@ -239,18 +248,19 @@
 							<li>contribution $=$ Local utility of $i_s$ - Global utility</li>
 						</ul>
 						<div class="fragment">
-						<li>Requires estimates of these values</li>
-						<ul>
-							<li>Estimate global utility by guessing future</li>
-							<li>Combined Strategy set - sample a random storategy from everyone.</li>
-						</ul>
-					</div>
+							<li>Requires estimates of these values</li>
+							<ul>
+								<li>Combined Strategy set - sample a random strategy from everyone.</li>
+								<li>Estimate global utility by guessing future</li>
+
+							</ul>
+						</div>
 					</ul>
 				</section>
 				<section>
 					<h3>Update probabilities</h3>
 					<ul>
-						<li>Update based on contribution of agent and Entropy</li>
+						<li>Update based on contribution of agent and entropy</li>
 						<li>The contribution becomes more important over time</li>
 					</ul>
 				</section>
@@ -258,8 +268,8 @@
 					<ul>
 						<li>If the probabilities changed enough: update probabilities again</li>
 						<ul>
-							<li>Smaller sampling 'neighborhood'/li>
-							<li>Reduce influence of Entropy in probability</li>
+							<li>Reduce size of sampling 'neighborhood'</li>
+							<li>Reduce influence of entropy in probability</li>
 						</ul>
 						<li class="fragment">Otherwise, return the strategy with the highest probability</li>
 					</ul>
@@ -267,14 +277,14 @@
 			</section>
 
 			<section>
-				<h3>Results</h3>
+				<h3>PC Results</h3>
 				<ul>
-					<li class="fragment">Unimpressive results</li>
-					<ul class="fragment">
+					<li>Mixed results</li>
+					<ul>
 						<li>Doesn't get caught in mediocre solutions often</li>
 						<li>'Explores' large amount of problem space</li>
 					</ul>
-					<li class="fragment">Has potential for improvement</li>
+					<li>Has potential for improvement</li>
 				</ul>
 			</section>
 
@@ -315,7 +325,7 @@
 			</section>
 
 			<section>
-				<h3>Results</h3>
+				<h3>DRVA Results</h3>
 				<ul>
 					<li>Decently close to best known solutions</li>
 					<li>Choice of lower level routing algorithm is important</li>
@@ -332,12 +342,11 @@
 
 			<section>
 				<h3>Questions?</h3>
-				<ul>
-				</ul>
+				<br>
+				Hfellows.github.io
 			</section>
 
 		</div>
-
 	</div>
 
 	<script src="lib/js/head.min.js"></script>
